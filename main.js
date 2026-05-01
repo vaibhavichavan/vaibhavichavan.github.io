@@ -65,3 +65,23 @@
       document.getElementById('mobileMenu').classList.remove('open');
       document.body.style.overflow = '';
     }
+
+    /* ── form ── */
+    async function handleSubmit(e) {
+      e.preventDefault();
+      const form = document.getElementById('contactForm');
+      
+      const res = await fetch('https://formspree.io/f/xykoyqew', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(form)
+      });
+    
+      if (res.ok) {
+        form.style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'block';
+        form.reset();
+      } else {
+        alert('Something went wrong. Please try again.');
+      }
+    }
