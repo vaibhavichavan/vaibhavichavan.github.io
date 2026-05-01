@@ -343,10 +343,11 @@
     .edu-card {
       background: var(--surface); border: 1px solid var(--border);
       border-radius: var(--radius); padding: 2.5rem;
-      display: flex; align-items: flex-start; gap: 2rem;
-      max-width: 700px; transition: border-color .25s, box-shadow .25s;
+      display: flex; align-items: flex-start; gap: 1rem;
+      transition: border-color .25s, box-shadow .25s; justify-content: space-between; flex-wrap: wrap;
     }
     .edu-card:hover { border-color: var(--purple); box-shadow: 0 8px 32px rgba(168,85,247,.1); }
+    .edu-card-inner{ display: flex; flex-direction: row; gap: 2rem; }
     .edu-icon {
       width: 56px; height: 56px; border-radius: 14px;
       background: linear-gradient(135deg, var(--purple), var(--purple-dim));
@@ -356,7 +357,7 @@
     .edu-degree { font-family: var(--font-head); font-size: 1.2rem; font-weight: 700; color: var(--text); }
     .edu-field { color: var(--purple); font-weight: 500; font-size: .9rem; margin-top: .2rem; }
     .edu-uni { color: var(--muted); font-size: .88rem; margin-top: .5rem; }
-    .edu-date { color: var(--muted); font-size: .82rem; margin-top: .3rem; }
+    .edu-marks { color: var(--muted); font-size: .82rem; margin-top: .3rem; }
 
     /* ── CERTIFICATIONS ── */
     #certifications { background: var(--bg); }
