@@ -496,21 +496,21 @@
           </div>
         </div>
         <div class="reveal reveal-delay-2">
-          <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
-            <div class="form-group">
-              <label for="name">Your Name</label>
-              <input type="text" id="name" name="name" placeholder="John Doe" required />
-            </div>
-            <div class="form-group">
-              <label for="email">Email Address</label>
-              <input type="email" id="email" name="email" placeholder="john@example.com" required />
-            </div>
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" placeholder="Hi Vaibhavi, I'd love to discuss..." required></textarea>
-            </div>
-            <button type="submit" class="submit-btn" id="submitBtn">Send Message →</button>
-          </form>
+            <form class="contact-form" id="contactForm" action="https://formspree.io/f/xykoyqew" method="POST">
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="John Doe" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="john@example.com" required />
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Hi Vaibhavi, I'd love to discuss..." required></textarea>
+              </div>
+              <button type="submit" class="submit-btn">Send Message →</button>
+            </form>
           <div class="form-success" id="formSuccess">
             ✅ Thanks for reaching out! I'll get back to you soon.
           </div>
