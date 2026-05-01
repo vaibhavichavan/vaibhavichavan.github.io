@@ -280,7 +280,7 @@
     }
     .timeline-item { position: relative; padding-bottom: 3rem; }
     .timeline-dot {
-      position: absolute; left: -2.55rem; top: .3rem;
+      position: absolute; left: -2.35rem; top: .3rem;
       width: 12px; height: 12px; border-radius: 50%;
       background: var(--purple); box-shadow: 0 0 12px var(--purple-glow);
       border: 2px solid var(--bg2);
