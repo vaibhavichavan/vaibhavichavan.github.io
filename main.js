@@ -66,10 +66,43 @@
       document.body.style.overflow = '';
     }
 
-    /* ── Contact form ── */
-    function handleSubmit(e) {
+     /* ── Contact form → Formspree ── */
+    async function handleSubmit(e) {
       e.preventDefault();
-      document.getElementById('contactForm').style.display = 'none';
-      document.getElementById('formSuccess').style.display = 'block';
+ 
+      const form    = document.getElementById('contactForm');
+      const btn     = document.getElementById('submitBtn');
+      const success = document.getElementById('formSuccess');
+ 
+      /* Loading state */
+      btn.disabled    = true;
+      btn.textContent = 'Sending…';
+      btn.style.opacity = '0.75';
+ 
+      try {
+        const res = await fetch('https://formspree.io/f/xykoyqew', {
+          method:  'POST',
+          headers: { 'Accept': 'application/json' },
+          body:    new FormData(form)
+        });
+ 
+        if (res.ok) {
+          form.style.display    = 'none';
+          success.style.display = 'block';
+          form.reset();
+        } else {
+          const data = await res.json();
+          const msg  = data?.errors?.map(err => err.message).join(', ')
+                       || 'Something went wrong. Please try again.';
+          alert(msg);
+          btn.disabled    = false;
+          btn.textContent = 'Send Message →';
+          btn.style.opacity = '1';
+        }
+      } catch (err) {
+        alert('Network error — please check your connection and try again.');
+        btn.disabled    = false;
+        btn.textContent = 'Send Message →';
+        btn.style.opacity = '1';
+      }
     }
-  
