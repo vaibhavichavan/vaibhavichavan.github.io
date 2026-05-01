@@ -339,6 +339,7 @@
 
     /* ── EDUCATION ── */
     #education { background: var(--bg2); }
+    .card-container{ display: flex; flex-direction: column; gap: 1.5rem; }
     .edu-card {
       background: var(--surface); border: 1px solid var(--border);
       border-radius: var(--radius); padding: 2.5rem;
